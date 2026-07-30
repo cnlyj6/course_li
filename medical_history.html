@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的病史记录 - 颞下颌关节问题</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            max-width: 100%;
+            margin: 0;
+            padding: 16px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c5282;
+            font-size: 1.4em;
+            text-align: center;
+            border-bottom: 2px solid #2c5282;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2d3748;
+            font-size: 1.15em;
+            background-color: #e2e8f0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .script {
+            background-color: #fffbeb;
+            border-left: 4px solid #f6ad55;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 0 6px 6px 0;
+        }
+        .timeline {
+            border-left: 3px solid #4299e1;
+            padding-left: 15px;
+            margin-left: 5px;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -21px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background-color: #4299e1;
+            border-radius: 50%;
+        }
+        .timeline-date {
+            font-weight: bold;
+            color: #2c5282;
+            font-size: 1em;
+        }
+        .highlight {
+            background-color: #fed7d7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .symptom {
+            background-color: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+        .question-box {
+            background-color: #e6fffa;
+            border: 2px solid #38b2ac;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        .current {
+            background-color: #fff5f5;
+            border: 2px solid #fc8181;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        li {
+            margin: 8px 0;
+        }
+        .update-date {
+            text-align: center;
+            color: #718096;
+            font-size: 0.9em;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e2e8f0;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📋 我的病史记录</h1>
+<p style="text-align:center; color:#718096;">颞下颌关节问题 / 咬合问题</p>
+
+<h2>🗣️ 主诉</h2>
+<div class="card">
+    <div class="script">
+        医生您好，我的问题是<span class="highlight">左侧颞下颌关节弹响、张口受限</span>，已经持续大约<strong>50天</strong>了。最开始是<strong>90天前补牙后</strong>出现的咬合不适，后来逐渐发展成关节问题。拍片显示<span class="highlight">关节盘前移</span>。
+    </div>
+</div>
+
+<h2>📅 病程时间线</h2>
+<div class="card">
+    <div class="timeline">
+        
+        <div class="timeline-item">
+            <div class="timeline-date">约90天前（补牙）</div>
+            <p>去补了<strong>左下6号和7号牙</strong>。</p>
+            <p>补完后感觉<span class="symptom">有点高</span>。</p>
+            <p>有一天睡醒后，<span class="symptom">左下半排牙酸胀麻</span>，持续了好多天。</p>
+            <p>咬棉签能缓解。</p>
+            <p>随后出现<span class="symptom">顶的上牙也开始痛</span>。</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">约70天前（调磨）</div>
+            <p>去做了<strong>调磨</strong>。</p>
+            <p>刚调完就感觉咬合时<span class="symptom">总是划一下</span>，然后有个<span class="highlight">左前牙会磕到</span>。</p>
+            <p>过了几天，<span class="symptom">左侧下巴经常刺痛</span>。</p>
+            <p>照镜子发现<span class="highlight">舌头左侧有2个很深的牙印</span>。</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">约50天前（关节问题出现）</div>
+            <p>早上吃饭时，<span class="highlight">左侧脸出现嚼一下响一下</span>。</p>
+            <p>然后感觉<span class="symptom">左侧脸里面有个东西乱动</span>，没办法控制。</p>
+            <p><span class="highlight">左脸经常抽搐痉挛</span>，左上下牙乱磕。</p>
+            <p>之后<strong>一直吃流食</strong>。</p>
+            <p><strong>拍片结果：关节盘前移。</strong></p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">约30天前（复位治疗）</div>
+            <p><span class="symptom">弹响基本消失</span>，但出现<span class="highlight">张口受限</span>。</p>
+            <p>去找医生做了<strong>手法复位</strong>。</p>
+            <p>复位后变成<span class="symptom">张嘴时弹响</span>（开口弹响）。</p>
+        </div>
+
+    </div>
+</div>
+
+<h2>⚠️ 目前症状</h2>
+<div class="current">
+    <ul>
+        <li><strong>张嘴弹响</strong>（复位后）</li>
+        <li>左侧牙<strong>咬纸会感觉舒服</strong></li>
+        <li><strong>空咬总是不舒服</strong></li>
+        <li>下巴前伸时，<strong>左边下牙咬着会空出来一块</strong>（咬合有间隙）</li>
+        <li>有时左侧咬着会舒服，但<strong>过一会之后就张嘴受限</strong></li>
+        <li>如果是左前牙磕到的状态，咬久了反而不会受限</li>
+    </ul>
+</div>
+
+<h2>❓ 我的疑问</h2>
+<div class="question-box">
+    <p><strong>我想请问医生：</strong></p>
+    <p>会不会是<strong>咬合问题把关节盘挤掉了</strong>？</p>
+    <p>因为我发现：</p>
+    <ul>
+        <li>有时候左侧咬着会舒服，但过一会就张嘴受限了</li>
+        <li>但如果是左前牙磕到的那个状态，咬久了反而不会受限</li>
+    </ul>
+    <p>这是不是说明<strong>咬合位置会影响关节盘的位置</strong>？</p>
+</div>
+
+<h2>📄 已有检查</h2>
+<div class="card">
+    <ul>
+        <li><strong>影像检查：</strong>已拍片，显示<span class="highlight">关节盘前移</span></li>
+    </ul>
+    <p style="color:#718096; font-size:0.9em;">（建议携带片子原件）</p>
+</div>
+
+<h2>💊 治疗经过</h2>
+<div class="card">
+    <ul>
+        <li>90天前：左下6、7号牙<strong>补牙</strong></li>
+        <li>70天前：<strong>调磨</strong></li>
+        <li>30天前：<strong>手法复位</strong></li>
+        <li>饮食：发病后<strong>一直吃流食</strong></li>
+    </ul>
+</div>
+
+<h2>📝 病史总结（可直接念给医生）</h2>
+<div class="card">
+    <div class="script">
+        <p>医生您好，我来说一下我的情况：</p>
+        
+        <p>大约<strong>90天前</strong>，我去补了<strong>左下6号和7号牙</strong>，补完感觉有点高。之后有一天睡醒，左下半排牙就开始酸胀麻，持续了好多天，咬棉签能缓解，后来上牙也开始痛。</p>
+        
+        <p><strong>70天前</strong>去做了调磨，刚调完就感觉咬合时总是划一下，有个左前牙会磕到。过了几天左侧下巴开始刺痛，照镜子还发现舌头左侧有两个很深的牙印。</p>
+        
+        <p><strong>50天前</strong>早上吃饭的时候，左侧脸开始嚼一下响一下，然后感觉脸里面有个东西乱动，控制不住，左脸经常抽搐痉挛，上下牙乱磕。后来去拍片子，显示<strong>关节盘前移</strong>。从那之后我就一直吃流食。</p>
+        
+        <p><strong>30天前</strong>弹响基本消失了，但是出现了张口受限。去找医生做了手法复位，复位之后变成了张嘴的时候弹响。</p>
+        
+        <p><strong>现在的情况是：</strong>左侧牙咬纸会舒服，但是空咬总是不舒服。下巴前伸的时候，左边下牙咬着会空出来一块。</p>
+        
+        <p>我发现一个规律：有时候左侧咬着会舒服，但过一会就张嘴受限了；但如果是左前牙磕到的那个状态，咬久了反而不会受限。</p>
+        
+        <p><strong>我想问的是：</strong>会不会是咬合的问题把关节盘挤出去了？咬合位置是不是会影响关节盘的位置？</p>
+    </div>
+</div>
+
+<div class="update-date">
+    最后更新：2026年7月29日
+</div>
+
+</body>
+</html>
