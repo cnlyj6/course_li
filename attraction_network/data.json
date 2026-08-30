@@ -90,6 +90,13 @@
       "mode": "地铁",
       "metro_line": "1号线",
       "stations": 3
+    },
+    {
+      "from": "presidential_palace",
+      "to": "hongshan_zoo",
+      "mode": "地铁",
+      "metro_line": "3号线",
+      "stations": 4
     }
   ]
 }
