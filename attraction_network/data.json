@@ -44,8 +44,9 @@
     {
       "from": "presidential_palace",
       "to": "massacre_memorial",
-      "minutes": 31,
-      "mode": "地铁"
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 5
     },
     {
       "from": "mingxiaoling",
