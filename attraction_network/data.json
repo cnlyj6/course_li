@@ -22,6 +22,11 @@
       "city": "南京"
     },
     {
+      "id": "jimingsi",
+      "name": "鸡鸣寺",
+      "city": "南京"
+    },
+    {
       "id": "massacre_memorial",
       "name": "南京大屠杀纪念馆",
       "city": "南京"
@@ -54,6 +59,13 @@
       "to": "presidential_palace",
       "mode": "地铁",
       "metro_line": "2号线",
+      "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "presidential_palace",
+      "mode": "地铁",
+      "metro_line": "3号线",
       "stations": 2
     }
   ]
