@@ -32,6 +32,11 @@
       "city": "南京"
     },
     {
+      "id": "hongshan_zoo",
+      "name": "红山动物园",
+      "city": "南京"
+    },
+    {
       "id": "massacre_memorial",
       "name": "南京大屠杀纪念馆",
       "city": "南京"
@@ -78,6 +83,13 @@
       "to": "xuanwu_lake",
       "mode": "步行",
       "distance_m": 700
+    },
+    {
+      "from": "hongshan_zoo",
+      "to": "xuanwu_lake",
+      "mode": "地铁",
+      "metro_line": "3号线",
+      "stations": 3
     }
   ]
 }
