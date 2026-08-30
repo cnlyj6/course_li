@@ -27,6 +27,11 @@
       "city": "南京"
     },
     {
+      "id": "xuanwu_lake",
+      "name": "玄武湖",
+      "city": "南京"
+    },
+    {
       "id": "massacre_memorial",
       "name": "南京大屠杀纪念馆",
       "city": "南京"
@@ -67,6 +72,12 @@
       "mode": "地铁",
       "metro_line": "3号线",
       "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "xuanwu_lake",
+      "mode": "步行",
+      "distance_m": 700
     }
   ]
 }

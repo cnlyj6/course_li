@@ -70,6 +70,7 @@
     {"id": "nanjing_museum", "name": "南京博物馆", "city": "南京"},
     {"id": "presidential_palace", "name": "总统府", "city": "南京"},
     {"id": "jimingsi", "name": "鸡鸣寺", "city": "南京"},
+    {"id": "xuanwu_lake", "name": "玄武湖", "city": "南京"},
     {"id": "massacre_memorial", "name": "南京大屠杀纪念馆", "city": "南京"}
   ],
   "edges": [
@@ -107,6 +108,12 @@
       "mode": "地铁",
       "metro_line": "3号线",
       "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "xuanwu_lake",
+      "mode": "步行",
+      "distance_m": 700
     }
   ]
 }
@@ -142,14 +149,19 @@
 
     function edgeLabel(edge) {
       const lines = [];
-      if (edge.distance_km != null) lines.push(`${edge.distance_km} km`);
+      const mode = edge.mode ?? "";
+      if (edge.distance_m != null) {
+        lines.push(`${mode} ${edge.distance_m} 米`);
+      } else if (edge.distance_km != null) {
+        lines.push(`${edge.distance_km} km`);
+      }
       if (edge.metro_line != null) {
-        let text = `${edge.mode}${edge.metro_line}`;
+        let text = `${mode}${edge.metro_line}`;
         if (edge.stations != null) text += ` ${edge.stations}站`;
         lines.push(text);
-      } else {
+      } else if (edge.distance_m == null) {
         const minutes = edge.minutes ?? edge.walk_minutes;
-        if (minutes != null) lines.push(`${edge.mode} ${minutes} 分钟`);
+        if (minutes != null) lines.push(`${mode} ${minutes} 分钟`);
       }
       return lines;
     }

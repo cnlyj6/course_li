@@ -31,15 +31,17 @@ def load_data() -> dict:
 
 def edge_label(edge: dict) -> str:
     lines: list[str] = []
-    if edge.get("distance_km") is not None:
-        lines.append(f"{edge['distance_km']} km")
     mode = edge.get("mode", "")
+    if edge.get("distance_m") is not None:
+        lines.append(f"{mode} {edge['distance_m']} 米")
+    elif edge.get("distance_km") is not None:
+        lines.append(f"{edge['distance_km']} km")
     if edge.get("metro_line") is not None:
         text = f"{mode}{edge['metro_line']}"
         if edge.get("stations") is not None:
             text += f" {edge['stations']}站"
         lines.append(text)
-    else:
+    elif edge.get("distance_m") is None:
         minutes = edge.get("minutes", edge.get("walk_minutes"))
         if minutes is not None:
             lines.append(f"{mode} {minutes} 分钟")
