@@ -29,6 +29,23 @@ def load_data() -> dict:
     return json.loads(DATA_PATH.read_text(encoding="utf-8"))
 
 
+def edge_label(edge: dict) -> str:
+    lines: list[str] = []
+    if edge.get("distance_km") is not None:
+        lines.append(f"{edge['distance_km']} km")
+    minutes = edge.get("minutes", edge.get("walk_minutes"))
+    lines.append(f"{edge['mode']} {minutes} 分钟")
+    return "\n".join(lines)
+
+
+def node_font_size(name: str) -> float:
+    if len(name) >= 8:
+        return 10.5
+    if len(name) >= 6:
+        return 11.5
+    return 13.0
+
+
 def layout(n: int) -> list[tuple[float, float]]:
     if n == 1:
         return [(0.0, 0.0)]
@@ -93,12 +110,14 @@ def main() -> None:
             zorder=1,
         )
         mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        label = f"{edge['distance_km']} km\n{edge['mode']} {edge['walk_minutes']} 分钟"
+        label = edge_label(edge)
+        label_lines = label.count("\n") + 1
+        box_h = 0.22 + 0.16 * label_lines
         ax.add_patch(
             FancyBboxPatch(
                 (mx - 0.42, my + 0.08),
                 0.84,
-                0.42,
+                box_h,
                 boxstyle="round,pad=0.04,rounding_size=0.08",
                 facecolor=LABEL_BG,
                 edgecolor=LINE,
@@ -139,6 +158,10 @@ def main() -> None:
                 zorder=4,
             )
         )
+        label_font = FontProperties(
+            fname=FONT_PATH,
+            size=node_font_size(node["name"]),
+        )
         ax.text(
             x,
             y,
@@ -146,7 +169,7 @@ def main() -> None:
             ha="center",
             va="center",
             color=INK,
-            fontproperties=name_font,
+            fontproperties=label_font,
             zorder=5,
         )
 

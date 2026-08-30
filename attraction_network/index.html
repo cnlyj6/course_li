@@ -66,15 +66,23 @@
   "title": "旅游景点网状图",
   "nodes": [
     {"id": "zhongshanling", "name": "中山陵", "city": "南京"},
-    {"id": "mingxiaoling", "name": "明孝陵", "city": "南京"}
+    {"id": "mingxiaoling", "name": "明孝陵", "city": "南京"},
+    {"id": "massacre_memorial", "name": "南京大屠杀纪念馆", "city": "南京"},
+    {"id": "nanjing_museum", "name": "南京博物馆", "city": "南京"}
   ],
   "edges": [
     {
       "from": "zhongshanling",
       "to": "mingxiaoling",
       "distance_km": 1.3,
-      "walk_minutes": 20,
+      "minutes": 20,
       "mode": "步行"
+    },
+    {
+      "from": "massacre_memorial",
+      "to": "nanjing_museum",
+      "minutes": 31,
+      "mode": "地铁"
     }
   ]
 }
@@ -108,21 +116,34 @@
       return n;
     };
 
+    function edgeLabel(edge) {
+      const lines = [];
+      if (edge.distance_km != null) lines.push(`${edge.distance_km} km`);
+      const minutes = edge.minutes ?? edge.walk_minutes;
+      lines.push(`${edge.mode} ${minutes} 分钟`);
+      return lines;
+    }
+
     data.edges.forEach((edge) => {
       const a = pos[edge.from], b = pos[edge.to];
       svg.appendChild(el("line", {
         class: "edge", x1: a.x, y1: a.y, x2: b.x, y2: b.y
       }));
       const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - 28;
+      const lines = edgeLabel(edge);
+      const boxH = lines.length === 1 ? 34 : 48;
       svg.appendChild(el("rect", {
-        class: "label-box", x: mx - 78, y: my - 28, width: 156, height: 48, rx: 10
+        class: "label-box", x: mx - 78, y: my - boxH / 2, width: 156, height: boxH, rx: 10
       }));
-      const t1 = el("text", { class: "edge-label", x: mx, y: my - 6 });
-      t1.textContent = `${edge.distance_km} km`;
-      const t2 = el("text", { class: "edge-label", x: mx, y: my + 14 });
-      t2.textContent = `${edge.mode} ${edge.walk_minutes} 分钟`;
-      svg.appendChild(t1);
-      svg.appendChild(t2);
+      lines.forEach((line, i) => {
+        const t = el("text", {
+          class: "edge-label",
+          x: mx,
+          y: my + (lines.length === 1 ? 5 : i === 0 ? -6 : 14)
+        });
+        t.textContent = line;
+        svg.appendChild(t);
+      });
     });
 
     data.nodes.forEach((node) => {
@@ -130,7 +151,12 @@
       const g = el("g", {});
       g.appendChild(el("circle", { class: "node-halo", cx: p.x, cy: p.y, r: 52 }));
       g.appendChild(el("circle", { class: "node-disk", cx: p.x, cy: p.y, r: 46 }));
-      const name = el("text", { class: "node-name", x: p.x, y: p.y + 6 });
+      const name = el("text", {
+        class: "node-name",
+        x: p.x,
+        y: p.y + 6,
+        "font-size": node.name.length >= 8 ? 12 : node.name.length >= 6 ? 14 : 16
+      });
       name.textContent = node.name;
       g.appendChild(name);
       svg.appendChild(g);
