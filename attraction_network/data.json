@@ -2,18 +2,8 @@
   "title": "旅游景点网状图",
   "nodes": [
     {
-      "id": "presidential_palace",
-      "name": "总统府",
-      "city": "南京"
-    },
-    {
-      "id": "massacre_memorial",
-      "name": "南京大屠杀纪念馆",
-      "city": "南京"
-    },
-    {
-      "id": "nanjing_museum",
-      "name": "南京博物馆",
+      "id": "zhongshanling",
+      "name": "中山陵",
       "city": "南京"
     },
     {
@@ -22,8 +12,18 @@
       "city": "南京"
     },
     {
-      "id": "zhongshanling",
-      "name": "中山陵",
+      "id": "nanjing_museum",
+      "name": "南京博物馆",
+      "city": "南京"
+    },
+    {
+      "id": "presidential_palace",
+      "name": "总统府",
+      "city": "南京"
+    },
+    {
+      "id": "massacre_memorial",
+      "name": "南京大屠杀纪念馆",
       "city": "南京"
     }
   ],
@@ -46,6 +46,20 @@
       "to": "massacre_memorial",
       "minutes": 31,
       "mode": "地铁"
+    },
+    {
+      "from": "mingxiaoling",
+      "to": "nanjing_museum",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 1
+    },
+    {
+      "from": "nanjing_museum",
+      "to": "presidential_palace",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 2
     }
   ]
 }

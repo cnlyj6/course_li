@@ -33,8 +33,16 @@ def edge_label(edge: dict) -> str:
     lines: list[str] = []
     if edge.get("distance_km") is not None:
         lines.append(f"{edge['distance_km']} km")
-    minutes = edge.get("minutes", edge.get("walk_minutes"))
-    lines.append(f"{edge['mode']} {minutes} 分钟")
+    mode = edge.get("mode", "")
+    if edge.get("metro_line") is not None:
+        text = f"{mode}{edge['metro_line']}"
+        if edge.get("stations") is not None:
+            text += f" {edge['stations']}站"
+        lines.append(text)
+    else:
+        minutes = edge.get("minutes", edge.get("walk_minutes"))
+        if minutes is not None:
+            lines.append(f"{mode} {minutes} 分钟")
     return "\n".join(lines)
 
 
@@ -70,14 +78,14 @@ def main() -> None:
     edge_font = FontProperties(fname=FONT_PATH, size=10)
     meta_font = FontProperties(fname=FONT_PATH, size=9)
 
-    fig, ax = plt.subplots(figsize=(10.5, 6.4), dpi=160)
+    fig, ax = plt.subplots(figsize=(11.5, 7.2), dpi=160)
     fig.patch.set_facecolor(BG)
     ax.set_facecolor(BG)
     ax.set_aspect("equal")
     ax.axis("off")
 
-    ax.set_xlim(-2.35, 2.35)
-    ax.set_ylim(-1.55, 1.75)
+    ax.set_xlim(-2.55, 2.55)
+    ax.set_ylim(-1.75, 1.85)
 
     ax.text(
         0,
