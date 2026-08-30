@@ -1,0 +1,24 @@
+{
+  "title": "旅游景点网状图",
+  "nodes": [
+    {
+      "id": "zhongshanling",
+      "name": "中山陵",
+      "city": "南京"
+    },
+    {
+      "id": "mingxiaoling",
+      "name": "明孝陵",
+      "city": "南京"
+    }
+  ],
+  "edges": [
+    {
+      "from": "zhongshanling",
+      "to": "mingxiaoling",
+      "distance_km": 1.3,
+      "walk_minutes": 20,
+      "mode": "步行"
+    }
+  ]
+}
