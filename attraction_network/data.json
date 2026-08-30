@@ -1,0 +1,102 @@
+{
+  "title": "旅游景点网状图",
+  "nodes": [
+    {
+      "id": "zhongshanling",
+      "name": "中山陵",
+      "city": "南京"
+    },
+    {
+      "id": "mingxiaoling",
+      "name": "明孝陵",
+      "city": "南京"
+    },
+    {
+      "id": "nanjing_museum",
+      "name": "南京博物馆",
+      "city": "南京"
+    },
+    {
+      "id": "presidential_palace",
+      "name": "总统府",
+      "city": "南京"
+    },
+    {
+      "id": "jimingsi",
+      "name": "鸡鸣寺",
+      "city": "南京"
+    },
+    {
+      "id": "xuanwu_lake",
+      "name": "玄武湖",
+      "city": "南京"
+    },
+    {
+      "id": "hongshan_zoo",
+      "name": "红山动物园",
+      "city": "南京"
+    },
+    {
+      "id": "massacre_memorial",
+      "name": "南京大屠杀纪念馆",
+      "city": "南京"
+    }
+  ],
+  "edges": [
+    {
+      "from": "zhongshanling",
+      "to": "mingxiaoling",
+      "distance_km": 1.3,
+      "minutes": 20,
+      "mode": "步行"
+    },
+    {
+      "from": "presidential_palace",
+      "to": "massacre_memorial",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 5
+    },
+    {
+      "from": "mingxiaoling",
+      "to": "nanjing_museum",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 1
+    },
+    {
+      "from": "nanjing_museum",
+      "to": "presidential_palace",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "presidential_palace",
+      "mode": "地铁",
+      "metro_line": "3号线",
+      "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "xuanwu_lake",
+      "mode": "步行",
+      "distance_m": 700
+    },
+    {
+      "from": "hongshan_zoo",
+      "to": "xuanwu_lake",
+      "mode": "地铁",
+      "metro_line": "1号线",
+      "stations": 3
+    },
+    {
+      "from": "presidential_palace",
+      "to": "hongshan_zoo",
+      "mode": "地铁",
+      "metro_line": "3号线",
+      "stations": 4
+    }
+  ]
+}
