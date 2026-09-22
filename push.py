@@ -6,7 +6,7 @@ from getpass import getpass
 # ========== 配置部分 ==========
 GIT_USERNAME = "cnlyj6"
 GIT_EMAIL = "g1910198192@gmail.com"
-REPO_NAME = "course_li"
+REPO_NAME = "code"
 SOURCE_DIR = "/content/drive/MyDrive"
 CLONE_DIR = f"/content/{REPO_NAME}"
 
