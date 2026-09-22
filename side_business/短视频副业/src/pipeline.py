@@ -9,12 +9,18 @@ from typing import Dict, List, Optional, Tuple
 import yaml
 
 from src import ROOT
+from src.cinematic import (
+    compose_still,
+    concat_clips,
+    infer_cam,
+    infer_loc,
+    infer_shot,
+    render_shot,
+    write_shot_ass,
+)
 from src.drama import (
     concat_wavs,
-    draw_dialogue_frame,
-    draw_title_frame,
     make_silence,
-    render_slideshow,
     to_padded_wav,
 )
 from src.media import (
@@ -133,9 +139,11 @@ async def build_drama(item: dict, cfg: dict, cast: dict) -> Path:
     if not scenes:
         raise ValueError(f"{item['id']} 没有 scenes")
 
-    frames: List[Tuple[Path, float]] = []
+    clips: List[Path] = []
     wavs: List[Path] = []
     total = len(scenes)
+    clips_dir = work / "clips"
+    subs_dir = work / "subs"
 
     for i, raw in enumerate(scenes):
         scene = dict(raw)
@@ -145,35 +153,46 @@ async def build_drama(item: dict, cfg: dict, cast: dict) -> Path:
         frame_path = frames_dir / f"{i:03d}.png"
         raw_audio = audio_dir / f"{i:03d}.mp3"
         wav_path = wav_dir / f"{i:03d}.wav"
+        clip_path = clips_dir / f"{i:03d}.mp4"
+        ass_path = subs_dir / f"{i:03d}.ass"
+        loc = infer_loc(scene, item)
+        shot = infer_shot(scene)
+        cam = infer_cam(scene, i)
+        rain = loc == "rain"
 
         if scene.get("type") == "title":
-            draw_title_frame(item, cfg, frame_path)
-            duration = float(scene.get("duration", 2.0))
+            compose_still(item, scene, cfg, frame_path, i)
+            duration = float(scene.get("duration", 2.2))
             make_silence(raw_audio, duration)
             to_padded_wav(raw_audio, wav_path, pad=0.0)
             actual = audio_duration(wav_path)
-            frames.append((frame_path, actual))
+            print(f"    片头 {i + 1}/{total}  {cam}")
+            render_shot(frame_path, wav_path, clip_path, actual, cam, ass=None, rain=False)
+            clips.append(clip_path)
             wavs.append(wav_path)
-            print(f"    片头 {i + 1}/{total}")
             continue
 
-        draw_dialogue_frame(item, scene, cfg, frame_path, i, total)
+        text = str(scene.get("text", "")).strip()
+        compose_still(item, scene, cfg, frame_path, i)
         voice = str(info.get("voice") or cfg["voice"])
         rate = str(info.get("rate") or cfg.get("rate", "+0%"))
         pitch = str(info.get("pitch") or cfg.get("pitch", "+0Hz"))
-        text = str(scene.get("text", "")).strip()
-        print(f"    配音 {i + 1}/{total} {speaker}")
-        await synthesize(text, voice=voice, rate=rate, pitch=pitch, dest=raw_audio)
-        pad = 0.2 if i < total - 1 else 0.08
+        print(f"    {shot}/{cam} {i + 1}/{total} {speaker}")
+        if raw_audio.exists() and raw_audio.stat().st_size > 2000:
+            print("      复用已有配音")
+        else:
+            await synthesize(text, voice=voice, rate=rate, pitch=pitch, dest=raw_audio)
+        pad = 0.16 if i < total - 1 else 0.08
         to_padded_wav(raw_audio, wav_path, pad=pad)
         actual = audio_duration(wav_path)
-        frames.append((frame_path, actual))
+        write_shot_ass(speaker, text, ass_path, actual)
+        render_shot(frame_path, wav_path, clip_path, actual, cam, ass=ass_path, rain=rain)
+        clips.append(clip_path)
         wavs.append(wav_path)
-        await asyncio.sleep(0.8)
+        await asyncio.sleep(0.4)
 
-    mixed = audio_dir / "full.wav"
-    concat_wavs(wavs, mixed)
-    render_slideshow(frames, mixed, video, fps=int(cfg.get("fps", 30)))
+    concat_wavs(wavs, audio_dir / "full.wav")
+    concat_clips(clips, video)
     return video
 
 

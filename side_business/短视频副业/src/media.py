@@ -150,7 +150,40 @@ async def synthesize(text: str, voice: str, rate: str, pitch: str, dest: Path) -
             wait = 1.5 * attempt
             print(f"  配音失败，{wait:.1f}s 后重试（{attempt}/5）: {exc}")
             await asyncio.sleep(wait)
-    raise RuntimeError(f"配音失败: {last_error}")
+    print("  改用本机中文语音")
+    _local_say(text, dest, rate)
+    return []
+
+
+def _local_say(text: str, dest: Path, rate: str) -> None:
+    import subprocess
+    import tempfile
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    rate_num = 185
+    try:
+        pct = int(str(rate).replace("%", "").replace("+", ""))
+        rate_num = max(140, min(230, 185 + pct))
+    except ValueError:
+        pass
+    aiff = Path(tempfile.mkstemp(suffix=".aiff")[1])
+    try:
+        proc = subprocess.run(
+            ["say", "-v", "Tingting", "-r", str(rate_num), "-o", str(aiff), text],
+            capture_output=True,
+            text=True,
+        )
+        if proc.returncode != 0:
+            raise RuntimeError(proc.stderr or "say failed")
+        conv = subprocess.run(
+            ["ffmpeg", "-y", "-i", str(aiff), "-q:a", "4", str(dest)],
+            capture_output=True,
+            text=True,
+        )
+        if conv.returncode != 0:
+            raise RuntimeError(conv.stderr[-1000:] if conv.stderr else "say convert failed")
+    finally:
+        aiff.unlink(missing_ok=True)
 
 
 def words_to_cues(words: Sequence[dict], max_chars: int = 12) -> List[Tuple[float, float, str]]:

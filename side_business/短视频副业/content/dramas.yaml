@@ -47,6 +47,22 @@ cast:
     role: 旁白
     voice: zh-CN-YunyangNeural
     rate: "+4%"
+  陈悦:
+    role: 反派
+    voice: zh-CN-XiaohanNeural
+    rate: "+14%"
+  沈父:
+    role: 反派
+    voice: zh-CN-YunyeNeural
+    rate: "+2%"
+  周宴:
+    role: 反派
+    voice: zh-CN-YunxiaNeural
+    rate: "+8%"
+  秘书:
+    role: 旁白
+    voice: zh-CN-YunyangNeural
+    rate: "+8%"
 
 videos:
   - id: "e01"
@@ -67,30 +83,73 @@ videos:
       #短剧 #逆袭 #真假千金 #打脸 #热门短剧
     scenes:
       - type: title
-        duration: 2.0
+        duration: 2.2
+        loc: banquet
+        plate: suwan_banquet
+        cam: push_in
       - speaker: 旁白
         text: 订婚宴到一半，陆家主母当众砸了苏晚的碗。
+        loc: banquet
+        shot: wide
+        plate: banquet_wide
+        cam: pan_right
       - speaker: 陆母
         text: 假千金也配坐主桌？现在，滚出陆家。
         tag: 当众羞辱
+        loc: banquet
+        shot: close
+        plate: lumu_banquet
+        cam: crash_in
       - speaker: 林知意
         text: 姐姐别哭呀。出门左转，救济站还开门。
+        loc: banquet
+        shot: close
+        plate: linzhiyi_banquet
+        cam: push_in
       - speaker: 陆景深
         text: 苏晚，没有陆家，你什么都不是。
+        loc: banquet
+        shot: close
+        plate: lujingshen_banquet
+        cam: tilt_up
       - speaker: 苏晚
         text: 好。我滚。陆景深，你给我记住今天。
         tag: 反杀预告
+        loc: banquet
+        shot: close
+        plate: suwan_banquet
+        cam: crash_in
       - speaker: 旁白
         text: 雨很大。一辆黑车停在她脚边。
+        loc: rain
+        shot: wide
+        plate: rain_wide
+        cam: pan_left
       - speaker: 顾宴川
         text: 上车。从今天起，没人能赶你第二次。
+        loc: rain
+        shot: close
+        plate: guyan_car
+        cam: push_in
       - speaker: 苏晚
         text: 你谁啊？
+        loc: rain
+        shot: close
+        plate: suwan_rain
+        cam: push_in
       - speaker: 顾宴川
         text: 京圈顾氏。你亲哥。鉴定报告，刚出来。
         tag: 身份揭晓
+        loc: rain
+        shot: close
+        plate: guyan_car
+        cam: crash_in
       - speaker: 旁白
         text: 下集，她把报告拍在陆母脸上。
+        loc: rain
+        shot: wide
+        plate: rain_wide
+        cam: pull_out
 
   - id: "e02"
     series: 滚出陆家那天
@@ -385,3 +444,433 @@ videos:
         text: 回家再说。夫人，车，在下面。
       - speaker: 旁白
         text: 下集，前未婚夫跪在顾氏大厅，求她当小三。
+
+  - id: "e09"
+    series: 重生后我不养白眼狼了
+    episode: 2
+    category: 打脸
+    cover: 卡停了，人慌了
+    title: 她把全家的卡一刀切停
+    next: 下集：公司公章，她连夜取走
+    tags: [短剧, 重生, 停卡, 虐渣, 热门短剧]
+    publish: |
+      继妹还在刷她的卡买包。
+      下一秒，所有卡同时失效。
+
+      第2集｜重生后我不养白眼狼了
+      想看陈家跪，扣「停」。
+
+      #短剧 #重生 #打脸 #虐渣 #热门短剧
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 退婚当晚。陈悦还在专柜，刷沈清名下的黑卡。
+      - speaker: 陈悦
+        text: 姐姐不是最疼我吗？这包，她会心疼的。
+        tag: 白眼狼
+      - speaker: 旁白
+        text: 收银提示音响起。交易失败。限额：零。
+      - speaker: 陈悦
+        text: 系统坏了？再刷！
+      - speaker: 陈母
+        text: 清清，家里水电费卡也登不上了！你干什么！
+        tag: 全家慌
+      - speaker: 沈清
+        text: 停的不是卡。是你们伸了十年的手。
+      - speaker: 沈父
+        text: 你忘了是谁供你读书？陈家养你，你恩将仇报！
+      - speaker: 沈清
+        text: 供我？前世我的奖学金，全进了陈悦的整容单。
+      - speaker: 陈砚
+        text: 沈清，你现在停卡，以后别想进陈氏半步。
+      - speaker: 沈清
+        text: 陈氏？明天公章，我会亲自拿走。
+        tag: 反杀
+      - speaker: 旁白
+        text: 下集，她连夜取走公章。陈家，开始崩。
+
+  - id: "e10"
+    series: 重生后我不养白眼狼了
+    episode: 3
+    category: 逆袭
+    cover: 公章，我拿走了
+    title: 陈氏真正的大股东，从来不是他们
+    next: 下集：订婚宴直播，她把录音放了出来
+    tags: [短剧, 重生, 逆袭, 公章, 热门短剧]
+    publish: |
+      他们以为公司是陈家的。
+      股权协议第一行，写的是沈清。
+
+      第3集｜重生后我不养白眼狼了
+
+      #短剧 #逆袭 #重生 #打脸
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 凌晨三点。陈氏总裁办。沈清把保险柜打开。
+      - speaker: 陈母
+        text: 你怎么会有密码！
+      - speaker: 沈清
+        text: 前世我帮你们记过。这一世，我只记自己的。
+        tag: 公章
+      - speaker: 旁白
+        text: 公章、法人章、股权协议，三样，连夜带走。
+      - speaker: 陈砚
+        text: 沈清，陈氏是我爸留下的！你一个外人！
+      - speaker: 沈清
+        text: 外人？协议第一行：隐名股东沈清，百分之五十一。
+        tag: 股权
+      - speaker: 沈父
+        text: 那是挂名避税！你不能当真！
+      - speaker: 沈清
+        text: 法律当真。律师函，已经发出去了。
+      - speaker: 陈悦
+        text: 姐姐，悦悦错了，卡还给我好不好……
+      - speaker: 沈清
+        text: 下一次伸手，我让你们连门都出不去。
+      - speaker: 旁白
+        text: 下集，他们办订婚宴洗白。她把前世录音，丢进直播。
+
+  - id: "e11"
+    series: 重生后我不养白眼狼了
+    episode: 4
+    category: 虐渣
+    cover: 录音，全网听见
+    title: 他们直播洗白。她把推人那晚放了出来
+    next: 下集：陈砚跪在发布会门口求复合
+    tags: [短剧, 虐渣, 录音, 打脸, 热门短剧]
+    publish: |
+      陈砚订婚宴直播洗白。
+      沈清把前世被推下楼的录音，丢进公屏。
+
+      第4集｜重生后我不养白眼狼了
+
+      #短剧 #虐渣 #打脸 #重生
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 陈家连夜办订婚宴。镜头对准陈砚和陈悦。
+      - speaker: 陈砚
+        text: 沈清精神不稳定。陈氏会依法追回被盗公章。
+        tag: 直播洗白
+      - speaker: 陈悦
+        text: 姐姐若回来认错，我们还认她。
+      - speaker: 旁白
+        text: 弹幕正刷心疼。沈清走进画面，插上U盘。
+      - speaker: 沈清
+        text: 不用认。听听你们前世怎么说的。
+      - speaker: 旁白
+        text: 录音响起。陈砚的声音：沈清，你太碍事了。
+        tag: 铁证
+      - speaker: 陈砚
+        text: 剪辑！这是伪造！
+      - speaker: 沈清
+        text: 声纹鉴定，半小时后出。你要现在跑，还是现在跪。
+      - speaker: 陈母
+        text: 清清，妈求你，别毁了陈家……
+      - speaker: 沈清
+        text: 前世毁的是我。这一世，轮到你们。
+      - speaker: 旁白
+        text: 下集，陈砚跪在发布会门口。她只回了两个字。
+
+  - id: "e12"
+    series: 重生后我不养白眼狼了
+    episode: 5
+    category: 打脸
+    cover: 复合？不存在
+    title: 他跪着求复合。她回了两个字：滚远
+    next: 下集大结局：陈氏易主那天，他们来晚了
+    tags: [短剧, 打脸, 前男友, 热门短剧]
+    publish: |
+      陈砚跪在发布会门口求复合。
+      沈清只回两个字：滚远。
+
+      第5集｜重生后我不养白眼狼了
+
+      #短剧 #打脸 #虐渣 #重生
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 陈氏临时发布会。门口跪着一个湿透的人。
+      - speaker: 陈砚
+        text: 沈清，我错了。公司给你，人给你，求你别报警察。
+        tag: 跪求
+      - speaker: 沈清
+        text: 公司本来就是我的。人，我更不收二手货。
+      - speaker: 陈悦
+        text: 姐姐，悦悦可以离开他！你要什么我都给！
+      - speaker: 沈清
+        text: 我要你们把前世欠我的命，慢慢还。
+      - speaker: 陈母
+        text: 清清，你还有没有良心！
+      - speaker: 沈清
+        text: 有。所以警察已经在楼下了。
+        tag: 报警
+      - speaker: 陈砚
+        text: 你真要逼死我？
+      - speaker: 沈清
+        text: 滚远。
+        tag: 两个字
+      - speaker: 旁白
+        text: 闪光灯亮起。他跪着的样子，上了热搜第一。
+      - speaker: 旁白
+        text: 下集大结局。陈氏易主。他们来求最后一次。
+
+  - id: "e13"
+    series: 重生后我不养白眼狼了
+    episode: 6
+    category: 大结局
+    cover: 易主那天
+    title: 他们来求最后一次。门，没开
+    next: 全集完 · 下一部：闪婚后他身价千亿
+    tags: [短剧, 大结局, 重生, 热门短剧]
+    publish: |
+      陈氏易主当天，他们堵在楼下。
+      沈清连窗帘都没掀。
+
+      大结局｜重生后我不养白眼狼了
+      下一部更甜更爽，评论扣「闪婚」。
+
+      #短剧 #大结局 #重生 #打脸
+    scenes:
+      - type: title
+        duration: 2.0
+      - speaker: 旁白
+        text: 陈氏更名沈氏。门口挤满记者，也挤着陈家三口。
+      - speaker: 沈父
+        text: 清清，爸错了。股份分我们一成，当养老行不行？
+        tag: 最后一次
+      - speaker: 陈母
+        text: 我们是一家人啊！
+      - speaker: 沈清
+        text: 一家人不会在婚礼上，把我推下楼。
+      - speaker: 陈悦
+        text: 你要是不看我们，我们就跪到你开门！
+      - speaker: 旁白
+        text: 沈清按灭内线。对秘书只说：报警清场。
+      - speaker: 陈砚
+        text: 沈清！你会孤独到死！
+        tag: 终局
+      - speaker: 沈清
+        text: 孤独总好过，再养一条会咬人的狗。
+      - speaker: 旁白
+        text: 电梯门关上。楼下的人，还在喊她的名字。
+      - speaker: 旁白
+        text: 她没有开门。全集完。下一部：闪婚后，他身价千亿。
+
+  - id: "e14"
+    series: 闪婚后他身价千亿
+    episode: 2
+    category: 反转
+    cover: 新闻联播来了
+    title: 轮椅男人上了热搜第一
+    next: 下集：前未婚夫跪在顾氏大厅，求她当小三
+    tags: [短剧, 闪婚, 隐藏身份, 热门短剧]
+    publish: |
+      她以为自己随便拉了个坐轮椅的。
+      当晚新闻：顾氏总裁，现身民政局。
+
+      第2集｜闪婚后他身价千亿
+
+      #短剧 #闪婚 #隐藏身份 #反转
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 宋宁刷到热搜时，还在便利店买泡面。
+      - speaker: 宋宁
+        text: 顾氏总裁顾深……等等，这名字眼熟。
+        tag: 热搜
+      - speaker: 旁白
+        text: 评论区全是同一张图：民政局门口，轮椅，和她的侧脸。
+      - speaker: 周宴
+        text: 宋宁，你疯了？找个残废气我？
+        tag: 前未婚夫
+      - speaker: 宋宁
+        text: 周宴，你电话还没挂，小三都听得见。
+      - speaker: 顾深
+        text: 夫人，泡面可以不吃。车在楼下。
+      - speaker: 宋宁
+        text: 你真是顾氏那个顾深？你不是说等文件吗？
+      - speaker: 顾深
+        text: 文件办完了。结婚证，也办完了。
+      - speaker: 秘书
+        text: 顾总，董事会在等。夫人是否一同出席？
+      - speaker: 顾深
+        text: 出席。从今天起，她出现的地方，就是顾氏。
+        tag: 正名
+      - speaker: 旁白
+        text: 下集，周宴跪在顾氏大厅。开口第一句：当我小三吧。
+
+  - id: "e15"
+    series: 闪婚后他身价千亿
+    episode: 3
+    category: 虐渣
+    cover: 求我当小三
+    title: 前未婚夫跪着，请她回去当小三
+    next: 下集：他站起来了。轮椅，是演的
+    tags: [短剧, 虐渣, 闪婚, 打脸, 热门短剧]
+    publish: |
+      周宴跪在顾氏大厅。
+      开口第一句：回来当我小三。
+
+      第3集｜闪婚后他身价千亿
+
+      #短剧 #虐渣 #闪婚 #打脸
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 顾氏大厅。周宴当众跪下，镜头比人快。
+      - speaker: 周宴
+        text: 宋宁，顾深是残疾人。你回来，我给你名分。小三也行。
+        tag: 当众丢人
+      - speaker: 宋宁
+        text: 周宴，你的名分，我婚礼那天就还你了。
+      - speaker: 周宴
+        text: 你图他钱？他坐轮椅，能给你什么！
+      - speaker: 顾深
+        text: 能给她一个，不用跪着求渣男的位置。
+      - speaker: 宋宁
+        text: 顾深，他脏了你的地板。要我赶吗？
+      - speaker: 顾深
+        text: 不用。保安知道该怎么送客。
+      - speaker: 周宴
+        text: 宋宁你会后悔的！残废能养你一辈子？
+      - speaker: 宋宁
+        text: 能。至少他结婚时，没有在跟别人打电话。
+        tag: 打脸
+      - speaker: 旁白
+        text: 下集，顾深从轮椅上站起来。全场，死一般安静。
+
+  - id: "e16"
+    series: 闪婚后他身价千亿
+    episode: 4
+    category: 甜宠
+    cover: 他站起来了
+    title: 轮椅是演的。千亿是真的
+    next: 下集：顾母设宴试她，前女友也来了
+    tags: [短剧, 甜宠, 隐藏身份, 热门短剧]
+    publish: |
+      全场以为他站不起来。
+      下一秒，顾深把轮椅推开。
+
+      第4集｜闪婚后他身价千亿
+
+      #短剧 #甜宠 #隐藏身份 #闪婚
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 董事会临时会议。有人提议：废人当总裁，该换人。
+      - speaker: 秘书
+        text: 顾总，他们要投票罢免您。
+      - speaker: 顾深
+        text: 让他们投。投完，我站给他们看。
+        tag: 揭晓
+      - speaker: 旁白
+        text: 顾深撑着扶手，站了起来。轮椅滑到墙边。
+      - speaker: 宋宁
+        text: 你……能走？
+      - speaker: 顾深
+        text: 能。民政局那天，我想看看谁敢拉一个没用的人结婚。
+      - speaker: 宋宁
+        text: 所以我是你的考题？
+      - speaker: 顾深
+        text: 不是考题。是我等了很久的答案。
+        tag: 甜
+      - speaker: 旁白
+        text: 投票屏幕归零。反对票，一张都没有。
+      - speaker: 顾深
+        text: 夫人，回家。今晚，我亲自下厨。
+      - speaker: 旁白
+        text: 下集，顾母设宴试她。前女友不请自来。
+
+  - id: "e17"
+    series: 闪婚后他身价千亿
+    episode: 5
+    category: 豪门
+    cover: 前女友来了
+    title: 顾母设宴。她把戒指摘下来
+    next: 下集大结局：发布会，他当众改股权
+    tags: [短剧, 豪门, 甜宠, 热门短剧]
+    publish: |
+      顾母设宴试她。前女友当众递包。
+      宋宁把戒指摘下来，放在桌上。
+
+      第5集｜闪婚后他身价千亿
+
+      #短剧 #豪门 #甜宠 #打脸
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 顾家老宅。顾母笑着，把前女友让到主位。
+      - speaker: 旁白
+        text: 那女人把包递给宋宁：弟媳，帮我拎一下。
+        tag: 试探
+      - speaker: 宋宁
+        text: 我不拎包。我也不当谁的弟媳。
+      - speaker: 旁白
+        text: 她把戒指摘下来，轻轻放在转盘上。
+      - speaker: 宋宁
+        text: 顾太太，这婚是我求的。你要是嫌弃，我现在走。
+      - speaker: 顾深
+        text: 谁让她走，谁先离开顾家。包括我妈。
+        tag: 护妻
+      - speaker: 旁白
+        text: 全场筷子停住。前女友的包，掉在地上。
+      - speaker: 顾深
+        text: 戒指给她戴回去。戴不好，我自己戴。
+      - speaker: 宋宁
+        text: 顾深，你确定？你妈还看着。
+      - speaker: 顾深
+        text: 确定。我选的夫人，不需要谁批准。
+      - speaker: 旁白
+        text: 下集大结局。发布会上，他当众把股权改到她名下。
+
+  - id: "e18"
+    series: 闪婚后他身价千亿
+    episode: 6
+    category: 大结局
+    cover: 股权给她
+    title: 发布会上，他把顾氏一半改到她名下
+    next: 全集完 · 下一部预告稍后
+    tags: [短剧, 大结局, 甜宠, 热门短剧]
+    publish: |
+      顾氏发布会。
+      顾深当众把一半股权，改到宋宁名下。
+
+      大结局｜闪婚后他身价千亿
+      三部看完了？评论扣「下一部」。
+
+      #短剧 #大结局 #闪婚 #甜宠
+    scenes:
+      - type: title
+        duration: 2.0
+      - speaker: 旁白
+        text: 顾氏全球发布会。周宴混进媒体席，想看她出丑。
+      - speaker: 顾深
+        text: 今天只宣布一件事。顾氏百分之五十，变更至宋宁。
+        tag: 股权
+      - speaker: 宋宁
+        text: 顾深，你疯了？我们才领证几天。
+      - speaker: 顾深
+        text: 几天够了。我看人，从来不看年限。
+      - speaker: 周宴
+        text: 她就是个贪钱的！你们会后悔！
+      - speaker: 宋宁
+        text: 周宴，贪不贪钱你最清楚。你婚礼那天，电话里报的价，我都听见了。
+        tag: 终局
+      - speaker: 顾深
+        text: 保安。把前未婚夫，请出我夫人的场。
+      - speaker: 旁白
+        text: 闪光灯把宋宁照得很亮。她第一次，没有想逃。
+      - speaker: 顾深
+        text: 夫人，回家。轮椅，我捐了。
+      - speaker: 旁白
+        text: 她没有放手。全集完。下一部，敬请期待。
