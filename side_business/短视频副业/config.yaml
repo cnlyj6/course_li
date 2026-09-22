@@ -1,0 +1,19 @@
+brand: 热门短剧
+series: 竖屏短剧
+tagline: 第一集就反转
+
+voice: zh-CN-XiaoyiNeural
+rate: "+8%"
+pitch: "+0Hz"
+
+width: 1080
+height: 1920
+fps: 30
+
+font_path: /System/Library/Fonts/PingFang.ttc
+font_index_title: 4
+font_index_body: 3
+fallback_font_path: /System/Library/Fonts/Hiragino Sans GB.ttc
+
+output_dir: output
+content_file: content/dramas.yaml

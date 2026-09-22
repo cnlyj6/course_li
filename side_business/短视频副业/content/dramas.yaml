@@ -1,0 +1,387 @@
+cast:
+  旁白:
+    role: 旁白
+    voice: zh-CN-YunyangNeural
+    rate: "-4%"
+  苏晚:
+    role: 女主
+    voice: zh-CN-XiaoyiNeural
+    rate: "+10%"
+  陆景深:
+    role: 男主
+    voice: zh-CN-YunxiNeural
+    rate: "+6%"
+  陆母:
+    role: 反派
+    voice: zh-CN-liaoning-XiaobeiNeural
+    rate: "+2%"
+  林知意:
+    role: 反派
+    voice: zh-CN-XiaoxiaoNeural
+    rate: "+12%"
+  顾宴川:
+    role: 男二
+    voice: zh-CN-YunjianNeural
+    rate: "+2%"
+  沈清:
+    role: 女主
+    voice: zh-CN-XiaoxiaoNeural
+    rate: "+8%"
+  陈砚:
+    role: 反派
+    voice: zh-CN-YunxiNeural
+    rate: "+8%"
+  陈母:
+    role: 反派
+    voice: zh-CN-liaoning-XiaobeiNeural
+    rate: "+0%"
+  顾深:
+    role: 男二
+    voice: zh-CN-YunjianNeural
+    rate: "+0%"
+  宋宁:
+    role: 女主
+    voice: zh-CN-XiaoyiNeural
+    rate: "+10%"
+  民政员:
+    role: 旁白
+    voice: zh-CN-YunyangNeural
+    rate: "+4%"
+
+videos:
+  - id: "e01"
+    series: 滚出陆家那天
+    episode: 1
+    category: 逆袭
+    cover: 滚出去，假千金
+    title: 订婚宴上，她被当众赶出家门
+    next: 下集：DNA报告，拍在陆母脸上
+    tags: [短剧, 逆袭, 真假千金, 打脸, 热门短剧]
+    publish: |
+      订婚宴上，假千金被当众赶出家门。
+      雨夜里，京圈顾氏来接她……
+
+      第1集｜滚出陆家那天
+      评论区扣「2」看她怎么打脸。
+
+      #短剧 #逆袭 #真假千金 #打脸 #热门短剧
+    scenes:
+      - type: title
+        duration: 2.0
+      - speaker: 旁白
+        text: 订婚宴到一半，陆家主母当众砸了苏晚的碗。
+      - speaker: 陆母
+        text: 假千金也配坐主桌？现在，滚出陆家。
+        tag: 当众羞辱
+      - speaker: 林知意
+        text: 姐姐别哭呀。出门左转，救济站还开门。
+      - speaker: 陆景深
+        text: 苏晚，没有陆家，你什么都不是。
+      - speaker: 苏晚
+        text: 好。我滚。陆景深，你给我记住今天。
+        tag: 反杀预告
+      - speaker: 旁白
+        text: 雨很大。一辆黑车停在她脚边。
+      - speaker: 顾宴川
+        text: 上车。从今天起，没人能赶你第二次。
+      - speaker: 苏晚
+        text: 你谁啊？
+      - speaker: 顾宴川
+        text: 京圈顾氏。你亲哥。鉴定报告，刚出来。
+        tag: 身份揭晓
+      - speaker: 旁白
+        text: 下集，她把报告拍在陆母脸上。
+
+  - id: "e02"
+    series: 滚出陆家那天
+    episode: 2
+    category: 打脸
+    cover: DNA拍在她脸上
+    title: 她才是陆家找了二十年的人
+    next: 下集：陆景深跪在雨里求复合
+    tags: [短剧, 打脸, 真千金, 热门短剧]
+    publish: |
+      陆母笑着说她是假的。
+      下一秒，顾氏律师把DNA拍在桌上。
+
+      第2集｜滚出陆家那天
+      想看陆景深跪下来，扣「跪」。
+
+      #短剧 #打脸 #真千金 #逆袭
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 第二天。陆家客厅。林知意还在试婚纱。
+      - speaker: 陆母
+        text: 苏晚还敢回来？保安，赶出去。
+      - speaker: 苏晚
+        text: 不用赶。我来，只送一样东西。
+      - speaker: 顾宴川
+        text: 陆太太，麻烦看清楚。这是司法鉴定。
+        tag: 打脸
+      - speaker: 旁白
+        text: 报告第一行：苏晚，顾氏血脉，匹配率百分之九十九。
+      - speaker: 林知意
+        text: 不可能！你们串通好的！
+      - speaker: 陆母
+        text: 晚晚，妈昨天是开玩笑的……
+        tag: 变脸
+      - speaker: 苏晚
+        text: 妈？昨天叫我滚的时候，您可没结巴。
+      - speaker: 顾宴川
+        text: 陆家占用顾氏千金二十年。律师函，下午到。
+      - speaker: 旁白
+        text: 下集，陆景深跪在雨里，求她回头。
+
+  - id: "e03"
+    series: 滚出陆家那天
+    episode: 3
+    category: 虐渣
+    cover: 前未婚夫跪了
+    title: 他求复合。她只回了三个字
+    next: 下集：假千金的秘密，藏不住了
+    tags: [短剧, 虐渣, 前男友, 热门短剧]
+    publish: |
+      陆景深跪在雨里求复合。
+      苏晚只回了三个字：让开。
+
+      第3集｜滚出陆家那天
+
+      #短剧 #虐渣 #打脸 #前男友
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 顾氏大厦楼下。陆景深撑着一把破伞等了一夜。
+      - speaker: 陆景深
+        text: 苏晚，我错了。婚约还算数，求你回来。
+        tag: 跪求
+      - speaker: 苏晚
+        text: 陆景深，你跪错人了。
+      - speaker: 陆景深
+        text: 没有陆家你怎么活，我都答应你！
+      - speaker: 苏晚
+        text: 我现在不缺活路。我缺的是，看你跪着。
+      - speaker: 顾宴川
+        text: 陆总，挡路了。顾氏车队，不等人。
+      - speaker: 陆景深
+        text: 晚晚，林知意是我妈安排的，我不知道啊！
+      - speaker: 苏晚
+        text: 让开。
+        tag: 三个字
+      - speaker: 旁白
+        text: 车门关上。陆景深的伞，掉在水里。
+      - speaker: 旁白
+        text: 下集，林知意的出生证明，被人调包了。
+
+  - id: "e04"
+    series: 滚出陆家那天
+    episode: 4
+    category: 反转
+    cover: 你才是假的
+    title: 真千金当众崩溃
+    next: 下集：顾氏认亲宴，京圈全到齐
+    tags: [短剧, 反转, 假千金, 热门短剧]
+    publish: |
+      林知意以为自己赢了。
+      直到警察把调包记录念出来。
+
+      第4集｜滚出陆家那天
+
+      #短剧 #反转 #假千金 #打脸
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 陆家宴会厅。林知意主动开直播，要当众澄清。
+      - speaker: 林知意
+        text: 苏晚买通鉴定所！全网都来评评理！
+        tag: 直播打脸
+      - speaker: 苏晚
+        text: 那就评。顾律师，请念第二份文件。
+      - speaker: 顾宴川
+        text: 二十年前，福利院调包记录。操作人，林知意生母。
+      - speaker: 林知意
+        text: 你污蔑我妈！
+      - speaker: 旁白
+        text: 直播弹出警方通报：涉事人已到案。
+      - speaker: 陆母
+        text: 知意，你说，这不是真的……
+      - speaker: 林知意
+        text: 我就是陆家的女儿！你们凭什么！
+      - speaker: 苏晚
+        text: 凭你昨天让我滚。现在，换你滚。
+        tag: 以其人之道
+      - speaker: 旁白
+        text: 下集，顾氏认亲宴。陆景深不请自来。
+
+  - id: "e05"
+    series: 滚出陆家那天
+    episode: 5
+    category: 豪门
+    cover: 京圈，都来了
+    title: 认亲宴上，他不请自来
+    next: 下集大结局：订婚宴，她没回头
+    tags: [短剧, 豪门, 认亲, 热门短剧]
+    publish: |
+      顾氏认亲宴，京圈全到齐。
+      陆景深不请自来，当众求她回头。
+
+      第5集｜滚出陆家那天
+
+      #短剧 #豪门 #认亲 #逆袭
+    scenes:
+      - type: title
+        duration: 1.8
+      - speaker: 旁白
+        text: 顾氏认亲宴。请柬一张难求。陆景深站在门外。
+      - speaker: 陆景深
+        text: 我来祝贺。晚晚，给我三分钟。
+      - speaker: 顾宴川
+        text: 陆总，这是顾家的场。你的三分钟，去年就用完了。
+      - speaker: 苏晚
+        text: 让他进。我想听他怎么祝贺。
+      - speaker: 陆景深
+        text: 陆家愿意把股份转给你。只要你还肯姓陆。
+        tag: 利益捆绑
+      - speaker: 苏晚
+        text: 我现在姓顾。陆家股份，留给你们自己填坑。
+      - speaker: 旁白
+        text: 全场寂静。闪光灯把陆景深照得很白。
+      - speaker: 顾宴川
+        text: 还有事。下周顾氏年会，苏晚，以继承人身份出席。
+        tag: 继承人
+      - speaker: 陆景深
+        text: 晚晚，你会后悔的！
+      - speaker: 苏晚
+        text: 我唯一后悔的，是让你浪费了我二十年。
+      - speaker: 旁白
+        text: 下集大结局。订婚宴上，他当众求婚。她没有回头。
+
+  - id: "e06"
+    series: 滚出陆家那天
+    episode: 6
+    category: 大结局
+    cover: 她没有回头
+    title: 他当众求婚。她挽的是别人的手
+    next: 全集完 · 下一部：重生后我不养白眼狼了
+    tags: [短剧, 大结局, 打脸, 热门短剧]
+    publish: |
+      陆景深当众求婚。
+      苏晚挽着顾宴川的手，连眼皮都没抬。
+
+      大结局｜滚出陆家那天
+      下一部更狠，评论扣「下一部」。
+
+      #短剧 #大结局 #打脸 #逆袭
+    scenes:
+      - type: title
+        duration: 2.0
+      - speaker: 旁白
+        text: 顾氏年会直播。陆景深闯上台，单膝跪地。
+      - speaker: 陆景深
+        text: 苏晚，我求婚。这一次，我以我自己的名义。
+        tag: 当众求婚
+      - speaker: 旁白
+        text: 千万观看。弹幕刷爆：答应他。
+      - speaker: 苏晚
+        text: 陆景深，你求婚的姿势，我见过。上次，对象是林知意。
+      - speaker: 陆景深
+        text: 那是演戏！我心里一直是你！
+      - speaker: 顾宴川
+        text: 顾氏继承人的手，已经有人挽了。
+      - speaker: 苏晚
+        text: 陆景深，起来吧。摄像机还开着，别让陆家再丢脸。
+        tag: 终局
+      - speaker: 旁白
+        text: 她没有回头。直播间里，陆景深还跪着。
+      - speaker: 旁白
+        text: 全集完。下一部更狠：重生后，我不养白眼狼了。
+
+  - id: "e07"
+    series: 重生后我不养白眼狼了
+    episode: 1
+    category: 重生
+    cover: 睁眼，我还活着
+    title: 前世婚礼被推下楼。这一世，她先退婚
+    next: 下集：她把卡停了，全家都慌了
+    tags: [短剧, 重生, 退婚, 虐渣, 热门短剧]
+    publish: |
+      前世婚礼当天，她被新郎推下楼。
+      睁眼，回到十八岁。第一句话：这婚，我退了。
+
+      新剧第1集｜重生后我不养白眼狼了
+
+      #短剧 #重生 #退婚 #虐渣
+    scenes:
+      - type: title
+        duration: 2.0
+      - speaker: 旁白
+        text: 婚礼进行曲响到一半。陈砚笑着，把沈清从楼梯上推了下去。
+        tag: 前世
+      - speaker: 陈砚
+        text: 沈清，你太碍事了。
+      - speaker: 旁白
+        text: 她死前看见，伴娘挽着他的手。那是她养了十年的继妹。
+      - speaker: 旁白
+        text: 她来不及喊出第二句话。
+      - speaker: 旁白
+        text: 再睁眼。天花板是十八岁的房间。录取通知书还在桌上。
+        tag: 重生
+      - speaker: 陈母
+        text: 清清，陈砚在楼下等你试婚纱呢！
+      - speaker: 沈清
+        text: 妈。这婚，我退了。
+        tag: 第一刀
+      - speaker: 陈母
+        text: 你疯了？陈家是我们沈家最后的台阶！
+      - speaker: 沈清
+        text: 台阶？前世他们把我当台阶踩。这一世，我拆台阶。
+      - speaker: 旁白
+        text: 下集，她把家里所有卡停了。白眼狼，开始慌了。
+
+  - id: "e08"
+    series: 闪婚后他身价千亿
+    episode: 1
+    category: 甜宠
+    cover: 随便拉了个轮椅
+    title: 民政局门口，她抓了个陌生人结婚
+    next: 下集：新闻联播，顾氏总裁现身民政局
+    tags: [短剧, 闪婚, 甜宠, 隐藏身份, 热门短剧]
+    publish: |
+      被逼婚的当天，她在民政局门口随便拉了个坐轮椅的男人。
+      当晚新闻：顾氏总裁，现身民政局。
+
+      新剧第1集｜闪婚后他身价千亿
+
+      #短剧 #闪婚 #甜宠 #隐藏身份
+    scenes:
+      - type: title
+        duration: 2.0
+      - speaker: 旁白
+        text: 宋宁被家里逼到民政局。未婚夫还在跟小三打电话。
+      - speaker: 宋宁
+        text: 谁都行。今天必须把证领了，我才能拿回我的户口本。
+      - speaker: 旁白
+        text: 门口，一个坐轮椅的男人在等文件。阳光很刺。
+      - speaker: 宋宁
+        text: 帅哥，结婚吗？五分钟，我请你喝杯咖啡。
+        tag: 闪婚
+      - speaker: 顾深
+        text: 可以。但领完证，你得跟我回家。
+      - speaker: 宋宁
+        text: 行。反正我家，我也不想回。
+      - speaker: 民政员
+        text: 顾深，宋宁。确认自愿结婚？
+      - speaker: 宋宁
+        text: 自愿。越快越好。
+      - speaker: 旁白
+        text: 当晚，热搜第一。顾氏集团总裁顾深，现身民政局。
+        tag: 隐藏身份
+      - speaker: 宋宁
+        text: 等等。你说你姓顾？？
+      - speaker: 顾深
+        text: 回家再说。夫人，车，在下面。
+      - speaker: 旁白
+        text: 下集，前未婚夫跪在顾氏大厅，求她当小三。
