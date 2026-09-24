@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>旅游景点网状图</title>
+  <style>
+    :root {
+      --bg: #f6efe4;
+      --ink: #2c241b;
+      --muted: #6b5a48;
+      --line: #8a6a45;
+      --node: #fff8ee;
+      --node-edge: #3d6b4f;
+      --accent: #c45c26;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "WenQuanYi Micro Hei", sans-serif;
+      background: radial-gradient(circle at top, #fbf6ee, var(--bg) 55%);
+      color: var(--ink);
+    }
+    header {
+      text-align: center;
+      padding: 28px 16px 8px;
+    }
+    h1 { margin: 0; font-size: 28px; font-weight: 650; }
+    p.meta { margin: 8px 0 0; color: var(--muted); }
+    #canvas-wrap {
+      width: min(960px, 94vw);
+      height: 520px;
+      margin: 18px auto 28px;
+      background: #fffdf8;
+      border: 1px solid #e4d3b8;
+      border-radius: 18px;
+      box-shadow: 0 10px 28px rgba(80, 50, 20, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+    svg { width: 100%; height: 100%; display: block; }
+    .edge { stroke: var(--line); stroke-width: 3; fill: none; }
+    .node-halo { fill: #e7d3b0; }
+    .node-disk { fill: var(--node); stroke: var(--node-edge); stroke-width: 3; }
+    .node-name { fill: var(--ink); font-size: 16px; font-weight: 650; text-anchor: middle; }
+    .edge-label {
+      fill: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      text-anchor: middle;
+    }
+    .label-box { fill: #fffdf8; stroke: var(--line); stroke-width: 1; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>旅游景点网状图</h1>
+    <p class="meta" id="meta"></p>
+  </header>
+  <div id="canvas-wrap">
+    <svg id="graph" viewBox="0 0 960 520"></svg>
+  </div>
+  <script id="graph-data" type="application/json">
+{
+  "title": "旅游景点网状图",
+  "nodes": [
+    {"id": "zhongshanling", "name": "中山陵", "city": "南京"},
+    {"id": "mingxiaoling", "name": "明孝陵", "city": "南京"},
+    {"id": "nanjing_museum", "name": "南京博物馆", "city": "南京"},
+    {"id": "presidential_palace", "name": "总统府", "city": "南京"},
+    {"id": "jimingsi", "name": "鸡鸣寺", "city": "南京"},
+    {"id": "xuanwu_lake", "name": "玄武湖", "city": "南京"},
+    {"id": "hongshan_zoo", "name": "红山动物园", "city": "南京"},
+    {"id": "massacre_memorial", "name": "南京大屠杀纪念馆", "city": "南京"}
+  ],
+  "edges": [
+    {
+      "from": "zhongshanling",
+      "to": "mingxiaoling",
+      "distance_km": 1.3,
+      "minutes": 20,
+      "mode": "步行"
+    },
+    {
+      "from": "presidential_palace",
+      "to": "massacre_memorial",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 5
+    },
+    {
+      "from": "mingxiaoling",
+      "to": "nanjing_museum",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 1
+    },
+    {
+      "from": "nanjing_museum",
+      "to": "presidential_palace",
+      "mode": "地铁",
+      "metro_line": "2号线",
+      "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "presidential_palace",
+      "mode": "地铁",
+      "metro_line": "3号线",
+      "stations": 2
+    },
+    {
+      "from": "jimingsi",
+      "to": "xuanwu_lake",
+      "mode": "步行",
+      "distance_m": 700
+    },
+    {
+      "from": "hongshan_zoo",
+      "to": "xuanwu_lake",
+      "mode": "地铁",
+      "metro_line": "1号线",
+      "stations": 3
+    },
+    {
+      "from": "presidential_palace",
+      "to": "hongshan_zoo",
+      "mode": "地铁",
+      "metro_line": "3号线",
+      "stations": 4
+    }
+  ]
+}
+  </script>
+  <script>
+    const data = JSON.parse(document.getElementById("graph-data").textContent);
+    document.getElementById("meta").textContent =
+      `${data.nodes.length} 个景点  ·  ${data.edges.length} 条路线`;
+
+    const svg = document.getElementById("graph");
+    const W = 960, H = 520;
+    const cx = W / 2, cy = H / 2 + 12;
+
+    function layout(n) {
+      if (n === 1) return [{x: cx, y: cy}];
+      if (n === 2) return [{x: cx - 220, y: cy}, {x: cx + 220, y: cy}];
+      const r = 180;
+      return Array.from({length: n}, (_, i) => {
+        const a = (Math.PI * 2 * i) / n - Math.PI / 2;
+        return {x: cx + r * Math.cos(a), y: cy + r * Math.sin(a)};
+      });
+    }
+
+    const pos = {};
+    layout(data.nodes.length).forEach((p, i) => { pos[data.nodes[i].id] = p; });
+
+    const NS = "http://www.w3.org/2000/svg";
+    const el = (name, attrs) => {
+      const n = document.createElementNS(NS, name);
+      Object.entries(attrs).forEach(([k, v]) => n.setAttribute(k, v));
+      return n;
+    };
+
+    function edgeLabel(edge) {
+      const lines = [];
+      const mode = edge.mode ?? "";
+      if (edge.distance_m != null) {
+        lines.push(`${mode} ${edge.distance_m} 米`);
+      } else if (edge.distance_km != null) {
+        lines.push(`${edge.distance_km} km`);
+      }
+      if (edge.metro_line != null) {
+        let text = `${mode}${edge.metro_line}`;
+        if (edge.stations != null) text += ` ${edge.stations}站`;
+        lines.push(text);
+      } else if (edge.distance_m == null) {
+        const minutes = edge.minutes ?? edge.walk_minutes;
+        if (minutes != null) lines.push(`${mode} ${minutes} 分钟`);
+      }
+      return lines;
+    }
+
+    data.edges.forEach((edge) => {
+      const a = pos[edge.from], b = pos[edge.to];
+      svg.appendChild(el("line", {
+        class: "edge", x1: a.x, y1: a.y, x2: b.x, y2: b.y
+      }));
+      const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2 - 28;
+      const lines = edgeLabel(edge);
+      const boxH = lines.length === 1 ? 34 : 48;
+      svg.appendChild(el("rect", {
+        class: "label-box", x: mx - 78, y: my - boxH / 2, width: 156, height: boxH, rx: 10
+      }));
+      lines.forEach((line, i) => {
+        const t = el("text", {
+          class: "edge-label",
+          x: mx,
+          y: my + (lines.length === 1 ? 5 : i === 0 ? -6 : 14)
+        });
+        t.textContent = line;
+        svg.appendChild(t);
+      });
+    });
+
+    data.nodes.forEach((node) => {
+      const p = pos[node.id];
+      const g = el("g", {});
+      g.appendChild(el("circle", { class: "node-halo", cx: p.x, cy: p.y, r: 52 }));
+      g.appendChild(el("circle", { class: "node-disk", cx: p.x, cy: p.y, r: 46 }));
+      const name = el("text", {
+        class: "node-name",
+        x: p.x,
+        y: p.y + 6,
+        "font-size": node.name.length >= 8 ? 12 : node.name.length >= 6 ? 14 : 16
+      });
+      name.textContent = node.name;
+      g.appendChild(name);
+      svg.appendChild(g);
+    });
+  </script>
+</body>
+</html>
